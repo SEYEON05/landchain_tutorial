@@ -15,13 +15,12 @@ prompt = ChatPromptTemplate.from_messages([
     ("user", "{input}")
 ])
 
-# chain = prompt | llm 
-# output = chain.invoke({"input": "한국으로 워킹홀리데이 후기를 알려줘"})
-# print(output)
+
 
 from langchain_core.output_parsers import StrOutputParser
 output_parser = StrOutputParser()
 
 chain = prompt | llm | output_parser
-output = chain.invoke({"input": "한국에서 유명한 아이스크림 집이 뭐야?"})
+output = chain.invoke({"input": "아이스크임이 먹고 싶은데, 메뉴를 추천해줘"})
 print(output)
+
